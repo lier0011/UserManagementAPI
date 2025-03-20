@@ -1,0 +1,44 @@
+@host = http://localhost:5126
+@token = my-secret-token
+
+# Root endpoint
+GET {{host}}/
+
+# Get all users
+###
+GET {{host}}/users
+Authorization: Bearer {{token}}
+
+# get users using filter
+###
+GET {{host}}/users?name=Bob
+Authorization: Bearer {{token}}
+
+# Get a user by ID
+###
+GET {{host}}/users/3
+
+# Create a new user
+###
+POST {{host}}/users
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "UserName": "Rashford",
+  "Age": 27
+}
+
+# Update an existing user
+###
+PUT {{host}}/users/4
+Content-Type: application/json
+
+{
+  "UserName": "Garnacho",
+  "Age": 23
+}
+
+# Delete a user
+###
+DELETE {{host}}/users/-1
