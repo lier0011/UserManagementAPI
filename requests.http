@@ -33,6 +33,7 @@ Authorization: Bearer {{token}}
 ###
 PUT {{host}}/users/4
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "UserName": "Garnacho",
